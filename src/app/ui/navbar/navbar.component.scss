@@ -1,0 +1,25 @@
+@import "../../../styles.scss";
+
+//dark palette forground/background:
+$primary: map-get($star-wars-ngrx-theme, primary);
+
+.mig-sw-navbar {
+  display: flex;
+  background-color: mat-color($primary, 900);
+  height: 120px;
+  align-items: center;
+
+  @include mat-elevation(6);
+
+  nav {
+    margin: 0 auto;
+  }
+
+  &-logo {
+    cursor: pointer;
+    img {
+      height: 70px;
+    }
+  }
+
+}

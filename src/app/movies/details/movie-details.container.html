@@ -1,0 +1,30 @@
+<ng-container *ngIf="movie$ | async as movie">
+  <header class="mig-sw-movie-details-header">
+    <div class="mig-sw-movie-details-header-title">
+      {{ movie.title }}
+    </div>
+    <div class="mig-sw-movie-details-header-episode">
+      Episode {{ movie.episode_id }}
+    </div>
+
+    <div class="mig-sw-movie-details-header-director">
+      <span >Directed by {{movie.director}} on {{movie.release_date | date:"shortDate"}}</span>
+    </div>
+    <div class="mig-sw-movie-details-header-info">
+      <span>And produced by {{movie.producer}}</span>
+    </div>
+  </header>
+  <!-- TODO: Show nice animation for the openin -->
+  <div  class="mig-sw-movie-details-opening" [innerHTML]="movie.opening_crawl"> </div>
+  <div class="mig-sw-movie-details-characters" >
+    <button *ngFor="let character of movie.characters; let id = index" mat-fab color="accent" aria-label="Example icon button with a delete icon">
+      <img
+        [migSwImageSrc]="id + 1"
+        [migSwImageGetterType]="characterImageType"
+        alt="Character image {{id}}"
+        title="Character image {{id}}" />
+    </button>
+  </div>
+
+
+</ng-container>
