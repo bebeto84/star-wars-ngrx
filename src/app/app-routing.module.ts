@@ -8,6 +8,8 @@ const routes: Routes = [
       import('./movies/movies.module').then((m) => m.MoviesModule),
   },
   { path: '', redirectTo: '/movies', pathMatch: 'full' },
+  { path: 'character-details/:id',
+    loadChildren: () => import('./character-details/character-details.module').then(m => m.CharacterDetailsModule) },
 ];
 
 @NgModule({

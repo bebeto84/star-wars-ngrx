@@ -68,7 +68,13 @@ $primary: map-get($star-wars-ngrx-theme, primary);
       height: 110px;
       width: 110px;
       border-radius: 50px;
-        @include mat-elevation(5);
+      @include mat-elevation(5);
+      transition: 0.3s ease all;
+      &:hover {
+        height: 120px;
+        width: 120px;
+        border-radius: 55px;
+      }
 
     }
   }

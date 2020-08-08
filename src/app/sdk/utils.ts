@@ -4,13 +4,7 @@ export function updateState<TState>(state: TState, changes: Partial<TState>): TS
   return Object.assign({}, state, changes) as TState;
 }
 
-export const getIdFromUrl = (url: string, type: EntityType) => {
-  const expression = new RegExp(`\/${type}\/(\d+)\/`);
-  const [, value] =  url.match(expression);
+export const getIdFilmsFromUrl = (url: string, type: EntityType) => {
+  const [, value] =  url.match(/\/films\/(\d+)\//);
   return value;
 };
-
-export const getIdsFromUrls = (urls: string[], type: EntityType) =>
-  urls.map(url => getIdFromUrl(url, type));
-
-

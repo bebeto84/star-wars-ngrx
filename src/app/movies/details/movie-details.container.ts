@@ -1,10 +1,11 @@
 import { EntityType } from '@sdk/shared.model';
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ViewEncapsulation, HostBinding } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ChangeDetectionStrategy, ViewEncapsulation, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 import { MovieAction, MovieSelector, Movie } from '@sdk/movie';
 import { Store, select } from '@ngrx/store';
 import { CoreSwapiState } from '@sdk/shared.model';
 import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'mig-sw-movie-details',
@@ -20,15 +21,20 @@ export class MovieDetailsContainer implements OnInit {
   readonly characterImageType: EntityType = 'characters';
 
   movie$: Observable<Movie> | undefined = this.store.pipe(
-    select(MovieSelector.selectCurrent)
+    select(MovieSelector.selectCurrent),
+    filter(movie => !!movie)
   );
 
   constructor(
-    private store: Store<CoreSwapiState>) {
+    private store: Store<CoreSwapiState>,
+    private router: Router) {
   }
 
   ngOnInit() {
-    debugger;
     this.store.dispatch(MovieAction.getDetail());
+  }
+
+  navigateToCharacterDetails(id: string) {
+    this.router.navigate(['/character-details', id]);
   }
 }

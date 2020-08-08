@@ -3,7 +3,7 @@ import { MovieAction, MovieSelector, Movie } from '@sdk/movie';
 import { CoreSwapiState, EntityType } from '@sdk/shared.model';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { tap, filter } from 'rxjs/operators';
+import { tap, filter, distinctUntilChanged } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -20,12 +20,13 @@ export class MoviesContainer implements OnInit {
   readonly imageType: EntityType = 'films';
 
   movies$: Observable<Movie[]> = this.store.pipe(
-    select(MovieSelector.selectAll()),
+    select(MovieSelector.selectAll),
+    distinctUntilChanged(),
     filter(movies => !!movies?.length)
   );
 
   isLoading$: Observable<boolean> = this.store.pipe(
-    select(MovieSelector.selectIsBusy())
+    select(MovieSelector.selectIsBusy)
   );
 
   constructor(

@@ -17,14 +17,17 @@
   <!-- TODO: Show nice animation for the openin -->
   <div  class="mig-sw-movie-details-opening" [innerHTML]="movie.opening_crawl"> </div>
   <div class="mig-sw-movie-details-characters" >
+
+    <!-- TODO: Componetize  -->
     <button *ngFor="let character of movie.characters; let id = index" mat-fab color="accent" aria-label="Example icon button with a delete icon">
-      <img
-        [migSwImageSrc]="id + 1"
-        [migSwImageGetterType]="characterImageType"
-        alt="Character image {{id}}"
-        title="Character image {{id}}" />
+      <a (click)="navigateToCharacterDetails(id + 1)">
+        <img
+          [migSwImageSrc]="id + 1"
+          [migSwImageGetterType]="characterImageType"
+          alt="Character image {{id}}"
+          title="Character image {{id}}" />
+      </a>
     </button>
+
   </div>
-
-
 </ng-container>
