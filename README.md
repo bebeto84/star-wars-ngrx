@@ -1,27 +1,16 @@
-# StarWarsNgrx
+[![StarWarsNgrx](https://static-mh.content.disney.io/starwars/assets/navigation/sw_logo_stacked-336c62367939.png)](https://static-mh.content.disney.io/starwars/assets/navigation/sw_logo_stacked-336c62367939.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+[![Build Status](https://travis-ci.org/klugjo/hexo-autolinker.svg?branch=master)](https://travis-ci.org/bebeto84/migflix)
+[![GitHub Issues](https://img.shields.io/github/issues/bebeto84/migflix.svg)](https://github.com/bebeto84/migflix/issues)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Development server
+**StarWarsNgrx** is a web application written with Angular 10 and NgRx 9.2, making use the Angular Material library.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### External library 
+**StarWarsNgrx** makes use of the [@ng-mg/loading-if](https://www.npmjs.com/package/@ng-mg/loading-if) package I created a while ago and contained in the **NgMg** project. [Github repo](https://github.com/bebeto84/ng-mg/tree/master/libs/loading-if) 
 
-## Code scaffolding
+License
+----
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+MIT
