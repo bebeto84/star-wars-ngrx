@@ -3,7 +3,7 @@ import { MovieAction, MovieSelector, Movie } from '@sdk/movie';
 import { CoreSwapiState, EntityType } from '@sdk/shared.model';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { tap, filter, distinctUntilChanged } from 'rxjs/operators';
+import { filter, distinctUntilChanged, delay } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -26,7 +26,8 @@ export class MoviesContainer implements OnInit {
   );
 
   isLoading$: Observable<boolean> = this.store.pipe(
-    select(MovieSelector.selectIsBusy)
+    select(MovieSelector.selectIsBusy),
+    delay(200)
   );
 
   constructor(
@@ -39,7 +40,7 @@ export class MoviesContainer implements OnInit {
     this.store.dispatch(MovieAction.getAll());
   }
 
-  navigate(id: string) {
+  onNavigate(id: string) {
     this.router.navigate(['/movies/details', id]);
   }
 }

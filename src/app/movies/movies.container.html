@@ -1,10 +1,4 @@
-<mat-card *ngFor="let movie of movies$ | async; let id = index" matRipple (click)="navigate(id+1)">
-  <!-- TODO: Create a component to wrap mat-card -->
-  <mat-card-header>
-    <mat-card-title>{{movie.title}}</mat-card-title>
-    <mat-card-subtitle>Episode {{movie.episode_id}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <img mat-card-image [migSwImageSrc]="id + 1" [migSwImageGetterType]="imageType" alt="{{movie.title}}" [title]="movie.title" />
-  </mat-card-content>
-</mat-card>
+<ng-container *ngMgLoadingIf="!(isLoading$ | async)">
+  <mig-sw-movie-list [movies]="movies$ | async" (navigate)="onNavigate($event)" showAdditionalInfo></mig-sw-movie-list>
+</ng-container>
+

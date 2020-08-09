@@ -1,9 +1,10 @@
 import { MovieDetailsContainer } from './movie-details.container';
-import { MovieDetailsRoutingModule } from './movies-routing.module';
+import { MovieDetailsRoutingModule } from './movie-details-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import { UiModuleModule } from '@ui/ui.module';
+import { LoadingModule } from '@ng-mg/loading-if';;
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { UiModuleModule } from '@ui/ui.module';
     CommonModule,
     MovieDetailsRoutingModule,
     UiModuleModule,
-    MatButtonModule
+    MatButtonModule,
+    LoadingModule
   ]
 })
 export class MovieDetailsModule { }

@@ -9,9 +9,9 @@ import { Store, select } from '@ngrx/store';
 import { RouterSelector} from '@sdk/router';
 
 @Injectable()
-export class MovieEffect {
+export class CharacterEffect {
 
-  getMovie$ = createEffect(() =>
+  getCharacter$ = createEffect(() =>
     this.actions$.pipe(
       ofType(CharacterAction.getDetail),
       withLatestFrom(

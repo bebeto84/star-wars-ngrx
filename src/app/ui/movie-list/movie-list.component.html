@@ -1,0 +1,10 @@
+<mat-card *ngFor="let movie of movies; let id = index" matRipple (click)="navigate.emit(id+1)">
+  <!-- TODO: Create a component to wrap mat-card -->
+  <mat-card-header *ngIf="showAdditionalInfo">
+    <mat-card-title>{{movie.title}}</mat-card-title>
+    <mat-card-subtitle>Episode {{movie.episode_id}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <img mat-card-image [migSwImageSrc]="id + 1" [migSwImageGetterType]="imageType"  />
+  </mat-card-content>
+</mat-card>

@@ -8,7 +8,7 @@ export const INITIAL_STATE: CharacterState = {
   current: null
 };
 
-export const movieReducer = createReducer(
+export const characterReducer = createReducer(
   INITIAL_STATE,
 
   on(CharacterAction.getDetail, (state) => updateState(state, {current: null, isBusy: true})),

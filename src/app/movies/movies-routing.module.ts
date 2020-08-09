@@ -10,10 +10,7 @@ const routes: Routes = [
     path: 'details/:id',
     loadChildren: () =>
       import('./details/movie-details.module').then((m) => m.MovieDetailsModule)
-  },
-/*   { path: 'details/:id', loadChildren: () =>
-      import('./details/movie-details.module').then((m) => m.MovieDetailsModule)
-  }, */
+  }
 
 // TODO: Error control manually or not found id
 ];

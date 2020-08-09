@@ -1,1 +1,18 @@
-<p>character-details works!</p>
+<ng-container *ngMgLoadingIf="character$ | async; let character">
+  <header class="mig-sw-character-details-header">
+    <div class="mig-sw-character-details-header-name">
+      {{ character.name }}
+    </div>
+    <div class="mig-sw-character-details-header-gender">
+      {{ character.gender }}
+    </div>
+    <div class="mig-sw-character-details-header-birth">
+      <span >Born in {{character.birth_year}}</span>
+    </div>
+  </header>
+
+  <div class="mig-sw-character-details-characters" >
+    <span>Appeared in </span>
+    <mig-sw-movie-list [movies]="character.films" (navigate)="navigateToMovieDetails($event)" ></mig-sw-movie-list>
+  </div>
+</ng-container>

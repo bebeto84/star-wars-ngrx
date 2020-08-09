@@ -1,4 +1,4 @@
-<ng-container *ngIf="movie$ | async as movie">
+<ng-container *ngMgLoadingIf="movie$ | async; let movie">
   <header class="mig-sw-movie-details-header">
     <div class="mig-sw-movie-details-header-title">
       {{ movie.title }}

@@ -1,0 +1,39 @@
+
+
+@import "../../styles.scss";
+@import '~@angular/material/theming';
+
+$primary: map-get($star-wars-ngrx-theme, primary);
+
+.mig-sw-character-details {
+  display: flex;
+  flex-direction: column;
+  &-header {
+    display: flex;
+    flex-direction: column;
+    @include mat-elevation(6);
+    background-color: mat-color($primary, 700);
+    height: 120px;
+    align-items: center;
+
+    &-name {
+      margin: 15px 0;
+      font-size: 2rem;
+      font-weight: 300;
+    }
+
+    &-gender {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    &-birth  {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+}
