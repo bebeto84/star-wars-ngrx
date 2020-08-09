@@ -1,5 +1,3 @@
-[![StarWarsNgrx](https://github.com/bebeto84/star-wars-ngrx/blob/master/src/assets/images/logo.png)]
-
 [![Build Status](https://travis-ci.org/klugjo/hexo-autolinker.svg?branch=master)](https://travis-ci.org/bebeto84/migflix)
 [![GitHub Issues](https://img.shields.io/github/issues/bebeto84/migflix.svg)](https://github.com/bebeto84/migflix/issues)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
